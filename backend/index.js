@@ -12,7 +12,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: "https://sky-plus-git-main-its5zoos-projects.vercel.app"
+    origin: [
+        "https://sky-plus.vercel.app",
+        "https://sky-plus-its5zoos-projects.vercel.app",
+        "https://sky-plus-git-main-its5zoos-projects.vercel.app"
+    ]
 }));
 app.use(express.json());
 
