@@ -79,21 +79,20 @@ function App() {
           : 'bg-gradient-to-br from-slate-50 via-sky-50 to-indigo-100',
       ].join(' ')}
     >
-      {/* Animated orbs */}
       <motion.div
         className={[
-          'absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full pointer-events-none',
+          'absolute top-[-10%] left-[-10%] w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full pointer-events-none',
           orbs.color1,
-          dark ? 'opacity-20 blur-3xl' : 'opacity-15 blur-2xl',
+          dark ? 'opacity-20 sm:opacity-20 blur-2xl sm:blur-3xl' : 'opacity-15 sm:opacity-15 blur-xl sm:blur-2xl',
         ].join(' ')}
         animate={{ x: [0, 30, 0], y: [0, -30, 0], scale: [1, 1.05, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className={[
-          'absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] rounded-full pointer-events-none',
+          'absolute bottom-[-10%] right-[-10%] w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] rounded-full pointer-events-none',
           orbs.color2,
-          dark ? 'opacity-20 blur-3xl' : 'opacity-15 blur-2xl',
+          dark ? 'opacity-20 sm:opacity-20 blur-2xl sm:blur-3xl' : 'opacity-15 sm:opacity-15 blur-xl sm:blur-2xl',
         ].join(' ')}
         animate={{ x: [0, -25, 0], y: [0, 25, 0], scale: [1, 1.08, 1] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
@@ -110,7 +109,7 @@ function App() {
 
       {/* Main content */}
       <div className="relative z-10 min-h-screen">
-        <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
+        <div className="max-w-2xl mx-auto px-4 py-6 sm:py-12">
 
           {/* Header */}
           <motion.div
@@ -129,9 +128,9 @@ function App() {
                 <h1 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white">
                   {APP_NAME}
                 </h1>
-              <p className="text-slate-600 dark:text-white/40 text-xs mt-0.5">
-                Real-time weather, beautifully
-              </p>
+                <p className="text-slate-600 dark:text-white/40 text-xs mt-0.5">
+                  Real-time weather, beautifully
+                </p>
               </div>
             </div>
 

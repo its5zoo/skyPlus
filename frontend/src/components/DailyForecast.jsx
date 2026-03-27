@@ -53,9 +53,9 @@ const DailyForecast = ({ daily }) => {
                         </div>
 
                         {/* Icon + condition */}
-                        <div className="flex items-center gap-2 w-28 flex-shrink-0">
+                        <div className="flex items-center gap-1 xs:gap-2 w-10 xs:w-28 flex-shrink-0">
                             <img src={day.iconUrl} alt={day.condition} className="w-8 h-8" />
-                            <span className="text-slate-600 dark:text-white/50 text-xs hidden sm:block">{day.condition}</span>
+                            <span className="text-slate-600 dark:text-white/50 text-[10px] xs:text-xs hidden min-[500px]:block">{day.condition}</span>
                         </div>
 
                         {/* Precip */}

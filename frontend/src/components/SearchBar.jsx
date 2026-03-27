@@ -36,7 +36,7 @@ const SearchBar = ({ onSearch, onGeolocate, loading, geoLoading }) => {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="w-full max-w-2xl mx-auto"
         >
-            <form onSubmit={handleSubmit} className="relative flex items-center gap-3">
+            <form onSubmit={handleSubmit} className="relative flex flex-col xs:flex-row items-stretch xs:items-center gap-2 sm:gap-3">
                 {/* Search input */}
                 <motion.div
                     className="relative flex-1"
@@ -94,11 +94,13 @@ const SearchBar = ({ onSearch, onGeolocate, loading, geoLoading }) => {
                     disabled={loading || !value.trim()}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="glass rounded-2xl px-5 py-3.5 text-slate-900 dark:text-white font-semibold text-sm
+                    className="glass rounded-2xl px-4 sm:px-5 py-3 sm:py-3.5 text-slate-900 dark:text-white font-semibold text-sm
                      transition-all duration-200 hover:bg-slate-900/5 dark:hover:bg-white/20 disabled:opacity-40 disabled:cursor-not-allowed
-                     whitespace-nowrap"
+                     whitespace-nowrap flex items-center justify-center gap-2"
                 >
-                    {loading ? 'Searching...' : 'Search'}
+                    <FiSearch className="xs:hidden" />
+                    <span className="hidden xs:inline">{loading ? 'Searching...' : 'Search'}</span>
+                    <span className="xs:hidden">{loading ? '...' : 'Search'}</span>
                 </motion.button>
 
                 {/* Geo button */}
@@ -109,8 +111,8 @@ const SearchBar = ({ onSearch, onGeolocate, loading, geoLoading }) => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     title="Use my location"
-                    className="glass rounded-2xl p-3.5 text-slate-900 dark:text-white transition-all duration-200
-                     hover:bg-slate-900/5 dark:hover:bg-white/20 disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
+                    className="glass rounded-2xl p-3 sm:p-3.5 text-slate-900 dark:text-white transition-all duration-200
+                     hover:bg-slate-900/5 dark:hover:bg-white/20 disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0 flex items-center justify-center"
                 >
                     <motion.div
                         animate={{ scale: geoLoading ? [1, 1.2, 1] : 1 }}

@@ -102,10 +102,10 @@ const WeatherCard = ({ weather, timezone, onFavorite, isFavorite }) => {
                     transition={{ delay: 0.2 }}
                     className="flex items-start"
                 >
-                    <span className="text-slate-900 dark:text-white text-7xl sm:text-8xl font-black leading-none tracking-tighter">
+                    <span className="text-slate-900 dark:text-white text-6xl xs:text-7xl sm:text-8xl font-black leading-none tracking-tighter">
                         {weather.temperature}
                     </span>
-                    <span className="text-slate-600 dark:text-white/70 text-4xl font-light mt-2">°C</span>
+                    <span className="text-slate-600 dark:text-white/70 text-3xl xs:text-4xl font-light mt-2">°C</span>
                 </motion.div>
 
                 <motion.div
@@ -159,22 +159,22 @@ const WeatherCard = ({ weather, timezone, onFavorite, isFavorite }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.55 }}
-                className="flex gap-4 relative z-10"
+                className="flex flex-col xs:flex-row gap-3 xs:gap-4 relative z-10"
             >
-                <div className="flex items-center gap-2 glass rounded-2xl px-4 py-3 flex-1">
+                <div className="flex items-center gap-2 glass rounded-2xl px-4 py-2.5 xs:py-3 flex-1">
                     <FiSunrise className="text-orange-300 text-xl flex-shrink-0" />
                     <div>
-                        <div className="text-slate-500 dark:text-white/40 text-xs">Sunrise</div>
-                        <div className="text-slate-900 dark:text-white text-sm font-semibold">
+                        <div className="text-slate-500 dark:text-white/40 text-[10px] xs:text-xs">Sunrise</div>
+                        <div className="text-slate-900 dark:text-white text-xs xs:text-sm font-semibold">
                             {formatTime(weather.sunrise, timezone)}
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center gap-2 glass rounded-2xl px-4 py-3 flex-1">
+                <div className="flex items-center gap-2 glass rounded-2xl px-4 py-2.5 xs:py-3 flex-1">
                     <FiSunset className="text-amber-300 text-xl flex-shrink-0" />
                     <div>
-                        <div className="text-slate-500 dark:text-white/40 text-xs">Sunset</div>
-                        <div className="text-slate-900 dark:text-white text-sm font-semibold">
+                        <div className="text-slate-500 dark:text-white/40 text-[10px] xs:text-xs">Sunset</div>
+                        <div className="text-slate-900 dark:text-white text-xs xs:text-sm font-semibold">
                             {formatTime(weather.sunset, timezone)}
                         </div>
                     </div>
