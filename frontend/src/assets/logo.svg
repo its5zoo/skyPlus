@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 128 128" fill="none" role="img" aria-label="WeatherNow logo">
+  <defs>
+    <linearGradient id="cloud" x1="18" y1="32" x2="110" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8F2FF"/>
+      <stop offset="1" stop-color="#B8D0FF"/>
+    </linearGradient>
+    <radialGradient id="drop" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) rotate(90) scale(14 10)">
+      <stop stop-color="#7ED3FF"/>
+      <stop offset="1" stop-color="#2F9CFF"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cloud -->
+  <path d="M46 92H92C106.36 92 118 80.36 118 66C118 52.77 108.05 41.86 95.22 40.24C91.44 26.17 78.59 16 63.5 16C46.86 16 32.92 28.33 30.7 44.39C20.03 48.07 12 58.23 12 70C12 82.15 21.85 92 34 92H46Z" fill="url(#cloud)"/>
+  <path d="M34 90H92C105.25 90 116 79.25 116 66C116 53.89 106.93 43.93 95.07 42.45C91.71 29.49 79.85 20 65.5 20C49.59 20 36.38 31.62 34.52 46.93C24.19 50.03 16.5 59.45 16.5 70C16.5 81.32 25.68 90 37 90H34Z" fill="#FFFFFF" opacity="0.35"/>
+
+  <!-- Raindrops -->
+  <path d="M30 102C30 108.08 34.48 112 40 112C45.52 112 50 108.08 50 102C50 96.8 44.9 89.28 41.46 84.73C40.75 83.78 39.25 83.78 38.54 84.73C35.1 89.28 30 96.8 30 102Z" fill="url(#drop)"/>
+  <path d="M78 106C78 111.52 82.25 116 88 116C93.75 116 98 111.52 98 106C98 101.02 93.07 93.93 89.54 89.26C88.83 88.31 87.17 88.31 86.46 89.26C82.93 93.93 78 101.02 78 106Z" fill="url(#drop)"/>
+  <path d="M12 106C12 111.52 16.25 116 22 116C27.75 116 32 111.52 32 106C32 101.02 27.07 93.93 23.54 89.26C22.83 88.31 21.17 88.31 20.46 89.26C16.93 93.93 12 101.02 12 106Z" fill="url(#drop)" opacity="0.95"/>
+  <path d="M96 100C96 105.52 100.25 110 106 110C111.75 110 116 105.52 116 100C116 95.02 111.07 87.93 107.54 83.26C106.83 82.31 105.17 82.31 104.46 83.26C100.93 87.93 96 95.02 96 100Z" fill="url(#drop)" opacity="0.95"/>
+</svg>

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-900/10 dark:bg-white/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-900/20 dark:bg-white/40;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 dark:bg-white/10 backdrop-blur-md border border-slate-900/10 dark:border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/60 dark:bg-black/20 backdrop-blur-md border border-slate-900/10 dark:border-white/10;
+  }
+
+  .glass-strong {
+    @apply bg-white/80 dark:bg-white/20 backdrop-blur-xl border border-slate-900/10 dark:border-white/30;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:bg-slate-900/5 dark:hover:bg-white/15;
+  }
+
+  .btn-glass {
+    @apply glass rounded-2xl px-6 py-3 text-slate-900 dark:text-white font-medium transition-all duration-200 hover:bg-slate-900/5 dark:hover:bg-white/20 hover:scale-105 active:scale-95 cursor-pointer select-none;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .glow {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+}
+
+@layer utilities {
+  .shimmer-bg {
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+/* Custom scrollbar for horizontal forecast */
+.forecast-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.15) transparent;
+}

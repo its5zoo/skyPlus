@@ -1,0 +1,14 @@
+{
+    "name": "skypulse-fullstack",
+    "version": "1.0.0",
+    "description": "Premium Full-Stack Weather Application",
+    "scripts": {
+        "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+        "dev:frontend": "cd frontend && npm start",
+        "dev:backend": "cd backend && npm start",
+        "build:frontend": "cd frontend && npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
