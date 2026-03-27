@@ -28,7 +28,7 @@ const buildWeatherResponse = (data) => ({
     uvi: data.uvi || null,
 });
 
-// GET /api/weather?city=London  OR  /api/weather?lat=51.5&lon=-0.1
+// GET /weather?address=London  OR  /weather?lat=51.5&lon=-0.1
 router.get('/weather', async (req, res) => {
     try {
         const API_KEY = process.env.OPENWEATHER_API_KEY;
@@ -63,7 +63,7 @@ router.get('/weather', async (req, res) => {
     }
 });
 
-// GET /api/forecast?city=London  OR  /api/forecast?lat=51.5&lon=-0.1
+// GET /forecast?address=London  OR  /forecast?lat=51.5&lon=-0.1
 router.get('/forecast', async (req, res) => {
     try {
         const API_KEY = process.env.OPENWEATHER_API_KEY;
