@@ -32,7 +32,7 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-app.use('/api', weatherRoutes);
+app.use('/', weatherRoutes);
 
 // Health check
 app.get('/health', (req, res) => res.json({ status: 'ok', message: 'Weather API is running' }));

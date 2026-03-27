@@ -20,11 +20,11 @@ export const useWeather = () => {
         setError(null);
 
         try {
-            const params = city ? { city } : { lat, lon };
+            const params = city ? { address: city } : { lat, lon };
 
             const [weatherRes, forecastRes] = await Promise.all([
-                axios.get(`${API_BASE}/api/weather`, { params, signal: abortRef.current.signal }),
-                axios.get(`${API_BASE}/api/forecast`, { params, signal: abortRef.current.signal }),
+                axios.get(`${API_BASE}/weather`, { params, signal: abortRef.current.signal }),
+                axios.get(`${API_BASE}/forecast`, { params, signal: abortRef.current.signal }),
             ]);
 
             setWeather(weatherRes.data);

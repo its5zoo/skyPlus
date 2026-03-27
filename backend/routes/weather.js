@@ -38,13 +38,13 @@ router.get('/weather', async (req, res) => {
                     'Missing OpenWeather API key. Set OPENWEATHER_API_KEY in backend/.env and restart the server.',
             });
         }
-        const { city, lat, lon } = req.query;
+        const { address, city, lat, lon } = req.query;
         let url;
 
         if (lat && lon) {
             url = `${BASE_URL}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
-        } else if (city) {
-            url = `${BASE_URL}/weather?q=${encodeURIComponent(city)}&units=metric&appid=${API_KEY}`;
+        } else if (address || city) {
+            url = `${BASE_URL}/weather?q=${encodeURIComponent(address || city)}&units=metric&appid=${API_KEY}`;
         } else {
             return res.status(400).json({ error: 'Please provide a city name or coordinates.' });
         }
@@ -73,13 +73,13 @@ router.get('/forecast', async (req, res) => {
                     'Missing OpenWeather API key. Set OPENWEATHER_API_KEY in backend/.env and restart the server.',
             });
         }
-        const { city, lat, lon } = req.query;
+        const { address, city, lat, lon } = req.query;
         let url;
 
         if (lat && lon) {
             url = `${BASE_URL}/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
-        } else if (city) {
-            url = `${BASE_URL}/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${API_KEY}`;
+        } else if (address || city) {
+            url = `${BASE_URL}/forecast?q=${encodeURIComponent(address || city)}&units=metric&appid=${API_KEY}`;
         } else {
             return res.status(400).json({ error: 'Please provide a city name or coordinates.' });
         }
